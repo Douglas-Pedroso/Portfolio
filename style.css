@@ -21,12 +21,13 @@ header {
 }
 
 .profile-img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   margin-bottom: 15px;
   border: 3px solid #00aaff;
 }
+
 
 nav ul {
   list-style: none;
@@ -57,6 +58,76 @@ section.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+.certificados-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.certificado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 180px;
+  text-decoration: none;
+}
+
+.certificado img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certificado img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.certificado p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff; /* ajusta se seu fundo for claro */
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skill img {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.skill p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff; /* troca para preto se o fundo for claro */
+}
+
+
 
 /* Seção de Projetos */
 #projetos .projeto-container {
