@@ -126,6 +126,18 @@ section.visible {
   font-weight: bold;
   color: #fff; /* troca para preto se o fundo for claro */
 }
+.skill img.github {
+  width: 140px;  /* mais larga */
+  height: auto;  /* mantém proporção */
+}
+.skill img.ibmcloud{
+  width: 150px;
+  height: auto;
+}
+.skill{
+  width: 100px;
+  height: auto;
+}
 
 
 
