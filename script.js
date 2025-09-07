@@ -1,5 +1,6 @@
 // Mensagem no console
 console.log("Site carregado com sucesso!");
+//testdriverpullreswuest
 // Smooth scroll para menu
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
