@@ -1,6 +1,6 @@
 // Mensagem no console
 console.log("Site carregado com sucesso!");
-//testedeiver-web pull request.
+//testedeiver-web pull request
 // Smooth scroll para menu
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
