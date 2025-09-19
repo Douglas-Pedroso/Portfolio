@@ -1,4 +1,7 @@
-body { 
+/* ===================== */
+/* CONFIGURAÇÕES GERAIS  */
+/* ===================== */
+body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -10,10 +13,14 @@ a {
   color: #00aaff;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
+/* ===================== */
+/* HEADER                */
+/* ===================== */
 header {
   text-align: center;
   padding: 30px 20px;
@@ -28,7 +35,6 @@ header {
   border: 3px solid #00aaff;
 }
 
-
 nav ul {
   list-style: none;
   padding: 0;
@@ -42,13 +48,16 @@ nav a {
   font-weight: bold;
 }
 
+/* ===================== */
+/* SEÇÕES               */
+/* ===================== */
 section {
   max-width: 900px;
   margin: 30px auto;
   padding: 20px;
   background: #2c2c2c;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
@@ -59,6 +68,9 @@ section.visible {
   transform: translateY(0);
 }
 
+/* ===================== */
+/* CERTIFICADOS          */
+/* ===================== */
 .certificados-container {
   display: flex;
   flex-wrap: wrap;
@@ -91,9 +103,12 @@ section.visible {
 .certificado p {
   font-size: 14px;
   font-weight: bold;
-  color: #fff; /* ajusta se seu fundo for claro */
+  color: #fff;
 }
 
+/* ===================== */
+/* SKILLS               */
+/* ===================== */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -107,6 +122,9 @@ section.visible {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100px;
+  /* largura uniforme */
+  height: auto;
 }
 
 .skill img {
@@ -124,24 +142,23 @@ section.visible {
   margin-top: 8px;
   font-size: 14px;
   font-weight: bold;
-  color: #fff; /* troca para preto se o fundo for claro */
+  color: #fff;
 }
+
+/* Ajustes especiais */
 .skill img.github {
-  width: 140px;  /* mais larga */
-  height: auto;  /* mantém proporção */
+  width: 140px;
+  height: auto;
 }
-.skill img.ibmcloud{
+
+.skill img.ibmcloud {
   width: 150px;
   height: auto;
 }
-.skill{
-  width: 100px;
-  height: auto;
-}
 
-
-
-/* Seção de Projetos */
+/* ===================== */
+/* PROJETOS             */
+/* ===================== */
 #projetos .projeto-container {
   display: flex;
   flex-wrap: wrap;
@@ -154,7 +171,7 @@ section.visible {
   border-radius: 10px;
   width: 300px;
   padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
 }
@@ -185,9 +202,12 @@ section.visible {
 
 #projetos .projeto:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
 }
 
+/* ===================== */
+/* CARDS                */
+/* ===================== */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -200,7 +220,7 @@ section.visible {
   border-radius: 10px;
   width: 300px;
   padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -227,9 +247,12 @@ section.visible {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
 }
 
+/* ===================== */
+/* FOOTER               */
+/* ===================== */
 footer {
   text-align: center;
   padding: 20px;
@@ -237,11 +260,17 @@ footer {
   margin-top: 30px;
 }
 
+/* ===================== */
+/* RESPONSIVO           */
+/* ===================== */
 @media (max-width: 768px) {
-  .cards-container, #projetos .projeto-container {
+
+  .cards-container,
+  #projetos .projeto-container {
     flex-direction: column;
     align-items: center;
   }
+
   nav ul {
     flex-direction: column;
     gap: 10px;
