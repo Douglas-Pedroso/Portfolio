@@ -2,15 +2,15 @@
 // MENSAGENS INICIAIS
 // =====================
 console.log("Site carregado com sucesso!");
-<<<<<<< HEAD
+
 //testdriverpullreswuest
 // Smooth scroll para menu
-=======
+
 
 // =====================
 // SMOOTH SCROLL PARA MENU
 // =====================
->>>>>>> f80b1b3 (atualização: adicionado novas skills e certificado React)
+
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault(); // previne o comportamento padrão do link
