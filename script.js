@@ -6,12 +6,16 @@ const TOTAL_ESTRELAS = 5;
 const estrelasDiv = document.getElementById('estrelas');
 const votosDiv = document.getElementById('porcentagem-votos');
 
+// URL base do backend
+const API_URL = "https://portfolio-backend-production-6d89.up.railway.app/api";
+
 // Integração com backend
 async function buscarAvaliacao() {
   try {
-  const res = await fetch('https://portfolio-production-9d89.up.railway.app/api/avaliacao');
+    const res = await fetch(`${API_URL}/avaliacao`);
     const data = await res.json();
     renderEstrelas(data.media || 0);
+
     if (data.total > 0) {
       const porcentagem = ((data.media / TOTAL_ESTRELAS) * 100).toFixed(1);
       votosDiv.textContent = `Média: ${Number(data.media).toFixed(2)} (${porcentagem}% de aprovação, ${data.total} voto${data.total > 1 ? 's' : ''})`;
@@ -51,7 +55,7 @@ function highlightEstrelas(e) {
 async function votarEstrela(e) {
   const nota = Number(e.target.dataset.valor);
   try {
-  await fetch('https://portfolio-production-9d89.up.railway.app/api/votar', {
+    await fetch(`${API_URL}/votar`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nota })
@@ -66,19 +70,15 @@ async function votarEstrela(e) {
 if (estrelasDiv && votosDiv) {
   buscarAvaliacao();
 }
+
 // =====================
 // MENSAGENS INICIAIS
 // =====================
 console.log("Site carregado com sucesso!");
 
-//testdriverpullreswuest
-// Smooth scroll para menu
-
-
 // =====================
 // SMOOTH SCROLL PARA MENU
 // =====================
-
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault(); // previne o comportamento padrão do link
