@@ -9,7 +9,7 @@ const votosDiv = document.getElementById('porcentagem-votos');
 // Integração com backend
 async function buscarAvaliacao() {
   try {
-    const res = await fetch('http://localhost:3001/api/avaliacao');
+  const res = await fetch('https://portfolio-production-9d89.up.railway.app/api/avaliacao');
     const data = await res.json();
     renderEstrelas(data.media || 0);
     if (data.total > 0) {
@@ -51,7 +51,7 @@ function highlightEstrelas(e) {
 async function votarEstrela(e) {
   const nota = Number(e.target.dataset.valor);
   try {
-    await fetch('http://localhost:3001/api/votar', {
+  await fetch('https://portfolio-production-9d89.up.railway.app/api/votar', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nota })
