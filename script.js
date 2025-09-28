@@ -13,10 +13,10 @@ const API_URL = "https://portfolio-backend-production-6d89.up.railway.app/api";
 // TOKEN ÚNICO PARA CADA USUÁRIO
 // =====================
 function getToken() {
-  let token = document.cookie.replace(/(?:(?:^|.*;\s*)voteToken\s*=\s*([^;]*).*$)|^.*$/, "$1");
+  let token = localStorage.getItem('voteToken');
   if (!token) {
-    token = crypto.randomUUID(); // gera um token único
-    document.cookie = `voteToken=${token}; path=/; max-age=${60*60*24*365}`; // expira em 1 ano
+    token = crypto.randomUUID(); // gera token único
+    localStorage.setItem('voteToken', token);
   }
   return token;
 }
@@ -72,15 +72,21 @@ async function votarEstrela(e) {
   const nota = Number(e.target.dataset.valor);
 
   try {
-    await fetch(`${API_URL}/votar`, {
+    const res = await fetch(`${API_URL}/votar`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nota, token: TOKEN })
     });
+
+    const data = await res.json();
+
+    if (!data.success) {
+      votosDiv.textContent = data.error || 'Erro ao registrar voto.';
+    }
+
     buscarAvaliacao();
   } catch (err) {
-    // Se o usuário já votou, mostra mensagem
-    votosDiv.textContent = 'Erro ao registrar voto ou você já votou.';
+    votosDiv.textContent = 'Erro ao registrar voto.';
   }
 }
 
