@@ -9,7 +9,23 @@ const votosDiv = document.getElementById('porcentagem-votos');
 // URL base do backend
 const API_URL = "https://portfolio-backend-production-6d89.up.railway.app/api";
 
-// Integração com backend
+// =====================
+// TOKEN ÚNICO PARA CADA USUÁRIO
+// =====================
+function getToken() {
+  let token = document.cookie.replace(/(?:(?:^|.*;\s*)voteToken\s*=\s*([^;]*).*$)|^.*$/, "$1");
+  if (!token) {
+    token = crypto.randomUUID(); // gera um token único
+    document.cookie = `voteToken=${token}; path=/; max-age=${60*60*24*365}`; // expira em 1 ano
+  }
+  return token;
+}
+
+const TOKEN = getToken();
+
+// =====================
+// INTEGRAÇÃO COM BACKEND
+// =====================
 async function buscarAvaliacao() {
   try {
     const res = await fetch(`${API_URL}/avaliacao`);
@@ -54,19 +70,23 @@ function highlightEstrelas(e) {
 
 async function votarEstrela(e) {
   const nota = Number(e.target.dataset.valor);
+
   try {
     await fetch(`${API_URL}/votar`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nota })
+      body: JSON.stringify({ nota, token: TOKEN })
     });
     buscarAvaliacao();
   } catch (err) {
-    votosDiv.textContent = 'Erro ao registrar voto.';
+    // Se o usuário já votou, mostra mensagem
+    votosDiv.textContent = 'Erro ao registrar voto ou você já votou.';
   }
 }
 
-// Inicialização
+// =====================
+// INICIALIZAÇÃO
+// =====================
 if (estrelasDiv && votosDiv) {
   buscarAvaliacao();
 }
@@ -81,7 +101,7 @@ console.log("Site carregado com sucesso!");
 // =====================
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
-    e.preventDefault(); // previne o comportamento padrão do link
+    e.preventDefault();
     const target = document.querySelector(link.getAttribute('href'));
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
@@ -98,11 +118,11 @@ const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible'); // adiciona classe para animação
+        entry.target.classList.add('visible');
       }
     });
   },
-  { threshold: 0.2 } // 20% do elemento precisa estar visível para disparar
+  { threshold: 0.2 }
 );
 
 sections.forEach(section => observer.observe(section));
