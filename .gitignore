@@ -1,0 +1,3 @@
+# Ignorar dependências e banco do backend
+backend/node_modules/
+backend/votos.db
