@@ -17,11 +17,10 @@ const TOKEN = getToken();
 
 async function buscarAvaliacao() {
   try {
-    const res = await fetch(`${API_URL}/avaliacao`);
+    const res = await fetch(`${API_URL}/api/avaliacao`);
     const data = await res.json();
 
     const votoUsuario = Number(localStorage.getItem("votoUsuario"));
-
     const mediaParaRender = votoUsuario || 0;
     renderEstrelas(mediaParaRender);
 
@@ -71,7 +70,7 @@ async function votarEstrela(e) {
   const nota = Number(e.target.dataset.valor);
 
   try {
-    const res = await fetch(`${API_URL}/votar`, {
+    const res = await fetch(`${API_URL}/api/votar`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nota, token: TOKEN }),
@@ -85,7 +84,6 @@ async function votarEstrela(e) {
     }
 
     localStorage.setItem("votoUsuario", nota);
-
     buscarAvaliacao();
   } catch (err) {
     votosDiv.textContent = "Erro ao registrar voto.";
@@ -111,7 +109,6 @@ document.querySelectorAll("nav a").forEach((link) => {
 
 // Animação de entrada
 const sections = document.querySelectorAll("section");
-
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -122,25 +119,20 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.2 }
 );
-
 sections.forEach((section) => observer.observe(section));
-
 
 document.querySelectorAll(".tab-button").forEach((btn) => {
   btn.addEventListener("click", () => {
     const target = btn.dataset.tab;
 
-    document
-      .querySelectorAll(".tab-button")
-      .forEach((b) => b.classList.remove("active"));
-
+    document.querySelectorAll(".tab-button").forEach((b) =>
+      b.classList.remove("active")
+    );
     btn.classList.add("active");
 
-    document
-      .querySelectorAll(".tab-content")
-      .forEach((content) => content.classList.remove("active"));
-
+    document.querySelectorAll(".tab-content").forEach((content) =>
+      content.classList.remove("active")
+    );
     document.getElementById(target).classList.add("active");
   });
 });
-
