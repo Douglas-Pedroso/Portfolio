@@ -136,3 +136,61 @@ document.querySelectorAll(".tab-button").forEach((btn) => {
     document.getElementById(target).classList.add("active");
   });
 });
+
+const formComentario = document.getElementById('formComentario');
+const listaComentarios = document.getElementById('listaComentarios');
+
+async function buscarComentarios() {
+  try {
+    const res = await fetch(`${API_URL}/comentarios`);
+    const data = await res.json();
+
+    if (!data.success) return;
+
+    listaComentarios.innerHTML = ""; // limpa para re-render
+    data.comentarios.forEach(c => {
+      const div = document.createElement("div");
+      div.className = "comentario";
+      div.innerHTML = `
+        <strong>${c.nome}</strong> <em>(${new Date(c.criado_em).toLocaleString()})</em>
+        <p>${c.comentario}</p>
+      `;
+      listaComentarios.prepend(div); // adiciona no topo
+    });
+  } catch (err) {
+    listaComentarios.textContent = 'Erro ao carregar comentários.';
+  }
+}
+
+
+formComentario.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const nome = document.getElementById('nome').value.trim();
+  const comentario = document.getElementById('comentario').value.trim();
+
+  if (!nome || !comentario) return;
+
+  try {
+    const res = await fetch(`${API_URL}/comentarios`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome, comentario })
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      formComentario.reset();
+      buscarComentarios();
+    } else {
+      alert(data.error || 'Erro ao enviar comentário.');
+    }
+  } catch (err) {
+    alert('Erro ao enviar comentário.');
+  }
+});
+
+// Buscar comentários ao carregar
+buscarComentarios();
+

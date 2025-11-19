@@ -258,3 +258,93 @@ footer {
     gap: 10px;
   }
 }
+
+/* Container da lista de comentários */
+#listaComentarios {
+  display: flex;
+  flex-direction: column-reverse; /* mantém os mais recentes no topo */
+  gap: 1rem;
+  margin-top: 1rem;
+  max-height: 400px; /* limita altura e permite scroll */
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Cada comentário */
+.comentario {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #f0f0f0;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUp 0.3s forwards;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.comentario:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.comentario strong {
+  display: block;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.comentario em {
+  display: block;
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.comentario p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #ddd;
+  margin: 0;
+}
+
+/* Formulário de comentário */
+#formComentario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+#formComentario input,
+#formComentario textarea {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #1e1e1e;
+  color: #fff;
+  resize: none;
+}
+
+#formComentario button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #00aaff;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+#formComentario button:hover {
+  background-color: #ffaa00;
+}
