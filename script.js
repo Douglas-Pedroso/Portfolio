@@ -2,7 +2,7 @@ const TOTAL_ESTRELAS = 5;
 const estrelasDiv = document.getElementById("estrelas");
 const votosDiv = document.getElementById("porcentagem-votos");
 
-const API_URL = "https://portfolio-backend-production-6d89.up.railway.app/api";
+const API_URL = "https://portfolio-backend-gl25.onrender.com";
 
 function getToken() {
   let token = localStorage.getItem("voteToken");
