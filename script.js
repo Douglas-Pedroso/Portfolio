@@ -137,12 +137,15 @@ document.querySelectorAll(".tab-button").forEach((btn) => {
   });
 });
 
+// ------------------------------
+// Comentários
+// ------------------------------
 const formComentario = document.getElementById('formComentario');
 const listaComentarios = document.getElementById('listaComentarios');
 
 async function buscarComentarios() {
   try {
-    const res = await fetch(`${API_URL}/comentarios`);
+    const res = await fetch(`${API_URL}/api/comentarios`);
     const data = await res.json();
 
     if (!data.success) return;
@@ -162,7 +165,6 @@ async function buscarComentarios() {
   }
 }
 
-
 formComentario.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -172,7 +174,7 @@ formComentario.addEventListener('submit', async (e) => {
   if (!nome || !comentario) return;
 
   try {
-    const res = await fetch(`${API_URL}/comentarios`, {
+    const res = await fetch(`${API_URL}/api/comentarios`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nome, comentario })
@@ -193,4 +195,3 @@ formComentario.addEventListener('submit', async (e) => {
 
 // Buscar comentários ao carregar
 buscarComentarios();
-
