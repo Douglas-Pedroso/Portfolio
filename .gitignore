@@ -1,3 +1,44 @@
-# Ignorar dependências e banco do backend
+# =======================
+# Node.js / Backend
+# =======================
 backend/node_modules/
 backend/votos.db
+backend/.env
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+
+# =======================
+# Frontend / React
+# =======================
+node_modules/
+build/
+dist/
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =======================
+# Logs
+# =======================
+*.log
+
+# =======================
+# Sistema
+# =======================
+.DS_Store
+Thumbs.db
+
+# =======================
+# IDEs
+# =======================
+.vscode/
+*.code-workspace
+
+# =======================
+# Outros arquivos temporários
+# =======================
+*.tmp
+*.temp
+

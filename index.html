@@ -74,6 +74,11 @@
         class="certificado">
         <img src="img/coursera6.png" alt="Certificado - Desenvolvimento de aplicativos web com JavaScript e MongoDB">
         <p>Desenvolvimento de aplicativos de back-end com Node.js e Express(IBM)</p>
+      </a>
+      <a href ="https://www.coursera.org/account/accomplishments/verify/5KF5TJTL6G41" target="_blank" class="certificado">
+        <img src="img/coursera7.png" alt="Certificado - Python para Ciência de Dados, IA e Desenvolvimento">
+        <p>Python para Ciência de Dados, IA e Desenvolvimento (IBM)</p> 
+      </a>
       <a href="https://storage.googleapis.com/programminghub/sampleCertificate%2FDouglas%20Pedroso%20Pires%20BarrosC%23%20(C%20Sharp)%20Certification%20Course.jpg"
         target="_blank" class="certificado">
         <img src="img/programminghub1.jpg" alt="Certificado - C# (Programming Hub)">
@@ -95,64 +100,82 @@
 
   <!-- SKILLS -->
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-        <p>HTML5</p>
-      </div>
-      <div class="skill">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-        <p>CSS3</p>
-      </div>
-      <div class="skill">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-          alt="JavaScript">
-        <p>JavaScript</p>
-      </div>
-      <div class="skill">
-        <img src="img/csharp.png" alt="C#">
-        <p>C#</p>
-      </div>
-      <div class="skill">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-        <p>Git</p>
-      </div>
-      <div class="skill">
-        <img src="img/github.png" alt="GitHub" class="github">
-        <p>GitHub</p>
-      </div>
-      <div class="skill">
-        <img src="img/gitbash.png" alt="Git Bash" class="gitbash">
-        <p>Git Bash</p>
-      </div>
-      <div class="skill">
-        <img src="img/sql.png" alt="SQL">
-        <p>SQL</p>
-      </div>
-        <div class="skill">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-          <p>Node.js</p>
-        </div>
-        <div class="skill">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express">
-          <p>Express</p>
-        </div>
-      <div class="skill">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-        <p>React</p>
-      </div>
-      <div class="skill">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux">
-        <p>Redux</p>
-      </div>
-      <div class="skill">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite">
-        <p>Vite</p>
-      </div>
+  <h2>Skills</h2>
 
+  <!-- Abas -->
+  <div class="tabs">
+    <button class="tab-button active" data-tab="linguagens">Linguagens</button>
+    <button class="tab-button" data-tab="frameworks">Frameworks / Ferramentas</button>
+    <button class="tab-button" data-tab="bibliotecas">Bibliotecas</button>
+  </div>
+
+  <!-- Conteúdo das abas -->
+  <div class="tab-content active" id="linguagens">
+    <div class="skills-container">
+      <!-- Linguagens -->
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><p>Python</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"><p>JavaScript</p></div>
+      <div class="skill"><img src="img/csharp.png"><p>C#</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><p>HTML5</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"><p>CSS3</p></div>
+      <div class="skill"><img src="img/sql.png"><p>SQL</p></div>
     </div>
-  </section>
+  </div>
+
+  <div class="tab-content" id="frameworks">
+    <div class="skills-container">
+      <!-- Frameworks / Ferramentas -->
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"><p>React</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg"><p>Redux</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg"><p>Vite</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"><p>Node.js</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"><p>Express</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"><p>Git</p></div>
+      <div class="skill"><img src="img/github.png" class="github"><p>GitHub</p></div>
+      <div class="skill"><img src="img/gitbash.png" class="gitbash"><p>Git Bash</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"><p>Jupyter</p></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="bibliotecas">
+  <div class="skills-container">
+    
+    <!-- Pandas -->
+    <div class="skill">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">
+      <p>Pandas<br><span class="skill-desc">Manipulação de dados (Python)</span></p>
+    </div>
+
+    <!-- Plotly -->
+    <div class="skill">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg">
+      <p>Plotly<br><span class="skill-desc">Gráficos e visualização (Python)</span></p>
+    </div>
+
+    <!-- BeautifulSoup -->
+    <div class="skill">
+      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png">
+      <p>BeautifulSoup<br><span class="skill-desc">Web scraping / parsing (Python)</span></p>
+    </div>
+
+    <!-- Requests -->
+    <div class="skill">
+      <img src="https://cdn-icons-png.flaticon.com/512/9068/9068649.png">
+      <p>Requests<br><span class="skill-desc">Requisições HTTP / APIs (Python)</span></p>
+    </div>
+
+    <!-- Axios -->
+    <div class="skill">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg">
+      <p>Axios<br><span class="skill-desc">Requisições HTTP em aplicações web (React)</span></p>
+    </div>
+
+  </div>
+</div>
+
+
+</section>
+
 
   <!-- PROJETOS -->
   <section id="projetos">

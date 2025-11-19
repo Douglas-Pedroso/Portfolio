@@ -94,49 +94,60 @@ section.visible {
   color: #fff;
 }
 
+/* Abas */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  background: #00aaff;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.tab-button.active {
+  background: #4CAF50;
+  color: white;
+}
+
+/* Conteúdo das abas */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Skills */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
-  margin-top: 20px;
+  gap: 20px;
 }
 
+.skill-desc {
+  font-size: 0.75em;
+  color: #aaa;
+}
+
+
 .skill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 110px;
   text-align: center;
-  width: 100px;
-  height: auto;
 }
 
 .skill img {
-  width: 80px;
-  height: 80px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.skill img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.skill p {
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.skill img.github {
-  width: 140px;
-  height: auto;
-}
-
-.skill img.ibmcloud {
-  width: 150px;
-  height: auto;
+  width: 60px;
+  height: 60px;
 }
 
 #projetos .projeto-container {

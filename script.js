@@ -7,7 +7,7 @@ const API_URL = "https://portfolio-backend-production-6d89.up.railway.app/api";
 function getToken() {
   let token = localStorage.getItem("voteToken");
   if (!token) {
-    token = crypto.randomUUID(); // gera token único
+    token = crypto.randomUUID();
     localStorage.setItem("voteToken", token);
   }
   return token;
@@ -36,7 +36,7 @@ async function buscarAvaliacao() {
       votosDiv.textContent = "Ainda não há avaliações.";
     }
   } catch (err) {
-    votosDiv.textContent = "Erro ao carregar avaliações.";
+    votosDiv.textContent = "Erro. Tenho que pagar o backend 😢";
   }
 }
 
@@ -45,7 +45,7 @@ function renderEstrelas(valor) {
 
   for (let i = 1; i <= TOTAL_ESTRELAS; i++) {
     const img = document.createElement("img");
-    const filled = i <= valor; // preenche só se usuário votou ou hover
+    const filled = i <= valor;
     img.src = filled ? "img/star.png" : "img/nostar.png";
     img.alt = filled ? "Estrela" : "Sem estrela";
     img.style.width = "32px";
@@ -98,6 +98,7 @@ if (estrelasDiv && votosDiv) {
 
 console.log("Site carregado com sucesso!");
 
+// Smooth Scroll
 document.querySelectorAll("nav a").forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -108,6 +109,7 @@ document.querySelectorAll("nav a").forEach((link) => {
   });
 });
 
+// Animação de entrada
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(
@@ -122,3 +124,23 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach((section) => observer.observe(section));
+
+
+document.querySelectorAll(".tab-button").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = btn.dataset.tab;
+
+    document
+      .querySelectorAll(".tab-button")
+      .forEach((b) => b.classList.remove("active"));
+
+    btn.classList.add("active");
+
+    document
+      .querySelectorAll(".tab-content")
+      .forEach((content) => content.classList.remove("active"));
+
+    document.getElementById(target).classList.add("active");
+  });
+});
+
