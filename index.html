@@ -105,8 +105,11 @@
   <!-- Abas -->
   <div class="tabs">
     <button class="tab-button active" data-group="skills" data-tab="linguagens">Linguagens</button>
-    <button class="tab-button" data-group="skills" data-tab="frameworks">Frameworks / Ferramentas</button>
+    <button class="tab-button" data-group="skills" data-tab="frameworks">Frameworks</button>
     <button class="tab-button" data-group="skills" data-tab="bibliotecas">Bibliotecas</button>
+    <button class="tab-button" data-group="skills" data-tab="databases">Bancos de Dados</button>
+    <button class="tab-button" data-group="skills" data-tab="ferramentas">Ferramentas Dev</button>
+    <button class="tab-button" data-group="skills" data-tab="deploy">Deploy/Hospedagem</button>
   </div>
 
   <!-- Conteúdo das abas -->
@@ -124,61 +127,75 @@
 
   <div class="tab-content" id="frameworks" data-group="skills">
     <div class="skills-container">
-      <!-- Frameworks / Ferramentas -->
+      <!-- Frameworks -->
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"><p>React</p></div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg"><p>Redux</p></div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg"><p>Vite</p></div>
-      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"><p>Node.js</p></div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"><p>Express</p></div>
-      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"><p>Git</p></div>
-      <div class="skill"><img src="img/github.png" class="github"><p>GitHub</p></div>
-      <div class="skill"><img src="img/gitbash.png" class="gitbash"><p>Git Bash</p></div>
-      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"><p>Jupyter</p></div>
-      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/puppeteer/puppeteer-original.svg"><p>Puppeteer</p></div>
-      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"><p>PostgreSQL</p></div>
-      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"><p>Supabase</p></div>
-      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"><p>Redis</p></div>
-      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg"><p>Socket.io</p></div>
-      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"><p>Vercel</p></div>
-      <div class="skill"><img src="img/render.png"><p>Render</p></div>
     </div>
   </div>
 
   <div class="tab-content" id="bibliotecas" data-group="skills">
-  <div class="skills-container">
-    
-    <!-- Pandas -->
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">
-      <p>Pandas<br><span class="skill-desc">Manipulação de dados (Python)</span></p>
+    <div class="skills-container">
+      <!-- Bibliotecas -->
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg">
+        <p>Pandas<br><span class="skill-desc">Manipulação de dados (Python)</span></p>
+      </div>
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg">
+        <p>Plotly<br><span class="skill-desc">Gráficos e visualização (Python)</span></p>
+      </div>
+      <div class="skill">
+        <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png">
+        <p>BeautifulSoup<br><span class="skill-desc">Web scraping / parsing (Python)</span></p>
+      </div>
+      <div class="skill">
+        <img src="https://cdn-icons-png.flaticon.com/512/9068/9068649.png">
+        <p>Requests<br><span class="skill-desc">Requisições HTTP / APIs (Python)</span></p>
+      </div>
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg">
+        <p>Axios<br><span class="skill-desc">Requisições HTTP em aplicações web (React)</span></p>
+      </div>
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/puppeteer/puppeteer-original.svg">
+        <p>Puppeteer<br><span class="skill-desc">Automação / web scraping de browsers (Node.js)</span></p>
+      </div>
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg">
+        <p>Socket.io<br><span class="skill-desc">Comunicação em tempo real via WebSockets (Node.js)</span></p>
+      </div>
     </div>
-
-    <!-- Plotly -->
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg">
-      <p>Plotly<br><span class="skill-desc">Gráficos e visualização (Python)</span></p>
-    </div>
-
-    <!-- BeautifulSoup -->
-    <div class="skill">
-      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png">
-      <p>BeautifulSoup<br><span class="skill-desc">Web scraping / parsing (Python)</span></p>
-    </div>
-
-    <!-- Requests -->
-    <div class="skill">
-      <img src="https://cdn-icons-png.flaticon.com/512/9068/9068649.png">
-      <p>Requests<br><span class="skill-desc">Requisições HTTP / APIs (Python)</span></p>
-    </div>
-
-    <!-- Axios -->
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg">
-      <p>Axios<br><span class="skill-desc">Requisições HTTP em aplicações web (React)</span></p>
-    </div>
-
   </div>
-</div>
+
+  <div class="tab-content" id="databases" data-group="skills">
+    <div class="skills-container">
+      <!-- Bancos de Dados -->
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"><p>PostgreSQL</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"><p>Supabase</p></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="ferramentas" data-group="skills">
+    <div class="skills-container">
+      <!-- Ferramentas de Desenvolvimento -->
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"><p>Git</p></div>
+      <div class="skill"><img src="img/github.png" class="github"><p>GitHub</p></div>
+      <div class="skill"><img src="img/gitbash.png" class="gitbash"><p>Git Bash</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"><p>Jupyter</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"><p>Node.js</p></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="deploy" data-group="skills">
+    <div class="skills-container">
+      <!-- Deploy/Hospedagem -->
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"><p>Vercel</p></div>
+      <div class="skill"><img src="img/render.png"><p>Render</p></div>
+      <div class="skill"><img src="img/github.png" class="github"><p>GitHub Pages</p></div>
+    </div>
+  </div>
 
 
 </section>
