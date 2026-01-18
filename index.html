@@ -104,13 +104,13 @@
 
   <!-- Abas -->
   <div class="tabs">
-    <button class="tab-button active" data-tab="linguagens">Linguagens</button>
-    <button class="tab-button" data-tab="frameworks">Frameworks / Ferramentas</button>
-    <button class="tab-button" data-tab="bibliotecas">Bibliotecas</button>
+    <button class="tab-button active" data-group="skills" data-tab="linguagens">Linguagens</button>
+    <button class="tab-button" data-group="skills" data-tab="frameworks">Frameworks / Ferramentas</button>
+    <button class="tab-button" data-group="skills" data-tab="bibliotecas">Bibliotecas</button>
   </div>
 
   <!-- Conteúdo das abas -->
-  <div class="tab-content active" id="linguagens">
+  <div class="tab-content active" id="linguagens" data-group="skills">
     <div class="skills-container">
       <!-- Linguagens -->
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><p>Python</p></div>
@@ -122,7 +122,7 @@
     </div>
   </div>
 
-  <div class="tab-content" id="frameworks">
+  <div class="tab-content" id="frameworks" data-group="skills">
     <div class="skills-container">
       <!-- Frameworks / Ferramentas -->
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"><p>React</p></div>
@@ -134,10 +134,17 @@
       <div class="skill"><img src="img/github.png" class="github"><p>GitHub</p></div>
       <div class="skill"><img src="img/gitbash.png" class="gitbash"><p>Git Bash</p></div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"><p>Jupyter</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/puppeteer/puppeteer-original.svg"><p>Puppeteer</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"><p>PostgreSQL</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"><p>Supabase</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"><p>Redis</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg"><p>Socket.io</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"><p>Vercel</p></div>
+      <div class="skill"><img src="img/render.png"><p>Render</p></div>
     </div>
   </div>
 
-  <div class="tab-content" id="bibliotecas">
+  <div class="tab-content" id="bibliotecas" data-group="skills">
   <div class="skills-container">
     
     <!-- Pandas -->
@@ -180,44 +187,66 @@
   <!-- PROJETOS -->
   <section id="projetos">
     <h2>Projetos</h2>
-    <div class="projeto-container">
-      <div class="projeto">
-        <h3>Projeto Fahrenheit</h3>
-        <p>Conversor de temperaturas de Celsius para Fahrenheit.</p>
-        <a href="https://douglas-pedroso.github.io/Projeto-Fahrenheit/" target="_blank" class="botao-projeto">Ver
-          Projeto</a>
+
+    <div class="tabs">
+      <button class="tab-button active" data-group="projetos" data-tab="projetos-basicos">Básicos</button>
+      <button class="tab-button" data-group="projetos" data-tab="projetos-medios">Medianos</button>
+      <button class="tab-button" data-group="projetos" data-tab="projetos-avancados">Avançados</button>
+    </div>
+
+    <div class="tab-content active" id="projetos-basicos" data-group="projetos">
+      <div class="projeto-container">
+        <div class="projeto">
+          <h3>Projeto Fahrenheit</h3>
+          <p>Conversor de temperaturas de Celsius para Fahrenheit.</p>
+          <a href="https://douglas-pedroso.github.io/Projeto-Fahrenheit/" target="_blank" class="botao-projeto">Ver Projeto</a>
+        </div>
+        <div class="projeto">
+          <h3>Calcule Sua Entrega</h3>
+          <p>Calculadora de valor de entrega com base em distância, veículo e clima.</p>
+          <a href="https://douglas-pedroso.github.io/calcule-sua-entrega/" target="_blank" class="botao-projeto">Ver Projeto</a>
+        </div>
+        <div class="projeto">
+          <h3>Lista de Tarefas</h3>
+          <p>Aplicação para adicionar/remover/editar tarefas diárias.</p>
+          <a href="https://douglas-pedroso.github.io/Lista-de-Tarefas/" target="_blank" class="botao-projeto">Ver Projeto</a>
+        </div>
+        <div class="projeto">
+            <h3>E-plant Shopping</h3>
+            <p>Aplicação criada com React que simula um site de compras com plantas exóticas</p>
+            <a href="https://douglas-pedroso.github.io/e-plantShopping/" target="_blank" class="botao-projeto">Ver Projeto</a>
+        </div>
+        <div class="projeto">
+          <h3>Pokédex</h3>
+          <p>Pokedex da primeira geração criada com html, css e js com array de pokémons em arquivo separado e organizado.</p>
+          <a href="https://douglas-pedroso.github.io/Pokedex-Page/" target="_blank" class="botao-projeto">Ver Projeto</a>
+        </div>
+        <div class="projeto">
+          <h3>Pokédex API</h3>
+          <p>Pokedex da primeira geração criada com html, css e js consumindo uma API externa da PokéAPI.</p>
+          <a href="https://douglas-pedroso.github.io/Pokedex-Page-API/" target="_blank" class="botao-projeto">Ver Projeto</a>
+        </div>
+        <div class="projeto">
+          <h3>Cardgame</h3>
+          <p>Jogo de cartas online para dois jogadores, com sincronização em tempo real. Utiliza Render como backend. A sincronização é feita por meio de WebSocket.</p>
+          <a href="https://douglas-pedroso.github.io/cardgame-online/" target="_blank" class="botao-projeto">Ver Projeto</a>
+        </div>
       </div>
-      <div class="projeto">
-        <h3>Calcule Sua Entrega</h3>
-        <p>Calculadora de valor de entrega com base em distância, veículo e clima.</p>
-        <a href="https://douglas-pedroso.github.io/calcule-sua-entrega/" target="_blank" class="botao-projeto">Ver
-          Projeto</a>
+    </div>
+
+    <div class="tab-content" id="projetos-medios" data-group="projetos">
+      <div class="projeto-container">
+        <div class="projeto">
+          <h3>Tecnocomparador</h3>
+          <p>Plataforma fullstack que automatiza scraping de produtos tech com Puppeteer e armazena em PostgreSQL/Supabase. Frontend React com busca inteligente. Backend RESTful Node.js. Features: OAuth, favoritos, cache persistente, 135+ categorias. Deploy: Vercel + Render.</p>
+          <a href="https://tecnocomparador.vercel.app/lojas" target="_blank" class="botao-projeto">Ver Projeto</a>
+        </div>
       </div>
-      <div class="projeto">
-        <h3>Lista de Tarefas</h3>
-        <p>Aplicação para adicionar/remover/editar tarefas diárias.</p>
-        <a href="https://douglas-pedroso.github.io/Lista-de-Tarefas/" target="_blank" class="botao-projeto">Ver Projeto</a>
-      </div>
-      <div class="projeto">
-          <h3>E-plant Shopping</h3>
-          <p>Aplicação criada com React que simula um site de compras com plantas exóticas</p>
-          <a href="https://douglas-pedroso.github.io/e-plantShopping/" target="_blank" class="botao-projeto">Ver Projeto</a>
-      </div>
-      <div class="projeto">
-        <h3>Pokédex</h3>
-        <p>Pokedex da primeira geração criada com html, css e js com array de pokémons em arquivo separado e organizado.</p>
-        <a href="https://douglas-pedroso.github.io/Pokedex-Page/" target="_blank" class="botao-projeto">Ver Projeto</a>
-      </div>
-      <div class="projeto">
-        <h3>Pokédex API</h3>
-        <p>Pokedex da primeira geração criada com html, css e js consumindo uma API externa da PokéAPI.</p>
-        <a href="https://douglas-pedroso.github.io/Pokedex-Page-API/" target="_blank" class="botao-projeto">Ver Projeto</a>
-      </div>
-      <div class="projeto">
-        <h3>Cardgame</h3>
-        <p>Jogo de cartas online para dois jogadores, com sincronização em tempo real. Utiliza Render como backend. A sincronização é feita por meio de WebSocket.</p>
-        <a href="https://douglas-pedroso.github.io/cardgame-online/" target="_blank" class="botao-projeto">Ver Projeto</a>
-      </div>
+    </div>
+
+    <div class="tab-content" id="projetos-avancados" data-group="projetos">
+      <p class="projetos-empty">Em breve projetos avançados.</p>
+    </div>
   </section>
 
   <!-- CONTATO -->
@@ -230,28 +259,29 @@
     <p>Telefone: <a href="tel:+351935093394">+351 935 093 394</a></p>
   </section>
 
+  <!-- COMENTÁRIOS -->
+  <section id="comentarios">
+    <h2>Comentários</h2>
+    <form id="formComentario">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <textarea id="comentario" placeholder="Digite seu comentário" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="listaComentarios"></div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <!-- AVALIAÇÃO DO PORTFÓLIO -->
-    <div id="avaliacao-portfolio" style="text-align:center; margin-bottom: 30px;">
+    <div id="avaliacao-portfolio">
       <h3>Avalie meu portfólio:</h3>
       <div id="estrelas">
         <!-- Estrelas serão inseridas via JS -->
       </div>
-      <div id="porcentagem-votos" style="margin-top: 8px; font-size: 0.95em; color: #888;"></div>
+      <div id="porcentagem-votos"></div>
     </div>
     <p>© 2025 Douglas Pedroso Pires Barros</p>
   </footer>
-
-  <div id="comentarios">
-  <h3>Comentários</h3>
-  <form id="formComentario">
-    <input type="text" id="nome" placeholder="Seu nome" required>
-    <textarea id="comentario" placeholder="Digite seu comentário" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-  <div id="listaComentarios"></div>
-</div>
 
 
   <script src="script.js"></script>

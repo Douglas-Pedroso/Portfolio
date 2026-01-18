@@ -94,8 +94,6 @@ if (estrelasDiv && votosDiv) {
   buscarAvaliacao();
 }
 
-console.log("Site carregado com sucesso!");
-
 // Smooth Scroll
 document.querySelectorAll("nav a").forEach((link) => {
   link.addEventListener("click", (e) => {
@@ -124,16 +122,20 @@ sections.forEach((section) => observer.observe(section));
 document.querySelectorAll(".tab-button").forEach((btn) => {
   btn.addEventListener("click", () => {
     const target = btn.dataset.tab;
+    const group = btn.dataset.group || "default";
 
-    document.querySelectorAll(".tab-button").forEach((b) =>
-      b.classList.remove("active")
-    );
+    document
+      .querySelectorAll(`.tab-button[data-group="${group}"]`)
+      .forEach((b) => b.classList.remove("active"));
+
     btn.classList.add("active");
 
-    document.querySelectorAll(".tab-content").forEach((content) =>
-      content.classList.remove("active")
-    );
-    document.getElementById(target).classList.add("active");
+    document
+      .querySelectorAll(`.tab-content[data-group="${group}"]`)
+      .forEach((content) => content.classList.remove("active"));
+
+    const targetEl = document.getElementById(target);
+    if (targetEl) targetEl.classList.add("active");
   });
 });
 
@@ -142,6 +144,8 @@ document.querySelectorAll(".tab-button").forEach((btn) => {
 // ------------------------------
 const formComentario = document.getElementById('formComentario');
 const listaComentarios = document.getElementById('listaComentarios');
+
+if (formComentario && listaComentarios) {
 
 async function buscarComentarios() {
   try {
@@ -192,6 +196,7 @@ formComentario.addEventListener('submit', async (e) => {
     alert('Erro ao enviar comentário.');
   }
 });
-
-// Buscar comentários ao carregar
-buscarComentarios();
+  buscarComentarios();
+} else {
+  console.warn('Elementos de comentários não encontrados');
+}

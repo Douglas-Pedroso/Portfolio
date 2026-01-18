@@ -196,6 +196,13 @@ section.visible {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
 }
 
+.projetos-empty {
+  text-align: center;
+  color: #bbb;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -238,6 +245,17 @@ section.visible {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
 }
 
+#avaliacao-portfolio {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#porcentagem-votos {
+  margin-top: 8px;
+  font-size: 0.95em;
+  color: #888;
+}
+
 footer {
   text-align: center;
   padding: 20px;
@@ -248,7 +266,8 @@ footer {
 @media (max-width: 768px) {
 
   .cards-container,
-  #projetos .projeto-container {
+  #projetos .projeto-container,
+  .certificados-container {
     flex-direction: column;
     align-items: center;
   }
